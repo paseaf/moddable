@@ -12,5 +12,9 @@
  *
  */
 
-var str = "Hello, world!";
-trace(str);
+function fibonacci(num) {
+    if (num <= 1) return 1;
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
+fibonacci(5);
+trace(fibonacci(5));

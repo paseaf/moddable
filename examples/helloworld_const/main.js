@@ -12,5 +12,4 @@
  *
  */
 
-var str = "Hello, world!";
-trace(str);
+const str = "Hello, world!";

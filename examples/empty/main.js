@@ -11,6 +11,3 @@
  *   Mountain View, CA 94042, USA.
  *
  */
-
-var str = "Hello, world!";
-trace(str);

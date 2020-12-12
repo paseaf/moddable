@@ -228,4 +228,5 @@ void app_main() {
 	#endif
 
     xTaskCreate(loop_task, "main", kStack, NULL, 4, NULL);
+    c_printf("total stack size: %d\n", kStack);
 }

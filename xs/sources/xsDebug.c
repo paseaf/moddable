@@ -2246,6 +2246,10 @@ void fxDescribeInstrumentation(txMachine* the, txInteger count, txString* names,
 #endif
 }
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "heap/include/esp_heap_caps.h"
+#include "heap/include/multi_heap.h"
 void fxSampleInstrumentation(txMachine* the, txInteger count, txInteger* values)
 {
 	txInteger xsInstrumentValues[xsInstrumentCount];
@@ -2263,6 +2267,7 @@ void fxSampleInstrumentation(txMachine* the, txInteger count, txInteger* values)
 
 	txInteger i, j = 0;
 #ifdef mxDebug
+
 	if (fxIsConnected(the)) {
 		fxEchoStart(the);
 		fxEcho(the, "<samples>");
@@ -2295,6 +2300,8 @@ void fxSampleInstrumentation(txMachine* the, txInteger count, txInteger* values)
 		c_printf("%d", xsInstrumentValues[i]);
 	}
 	c_printf("\n");
+	c_printf("uxTaskGetStackHighWaterMark: %d\n", uxTaskGetStackHighWaterMark(NULL));
+    c_printf("heap_caps_get_minimum_free_size: %d\n", xPortGetMinimumEverFreeHeapSize());
 #endif
 }
 #endif

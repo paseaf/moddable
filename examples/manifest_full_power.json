@@ -1,0 +1,25 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json",
+		"$(MODDABLE)/modules/network/mdns/manifest.json",
+		"$(MODDABLE)/modules/network/ble/manifest_client.json",
+		"$(MODDABLE)/modules/network/ble/manifest_server.json",
+		"$(MODDABLE)/modules/network/mqtt/manifest.json",
+		"$(MODDABLE)/modules/network/webthings/manifest.json",
+		"$(MODDABLE)/modules/crypt/tls.json",
+		"$(MODULES)/pins/analog/manifest.json",
+		"$(MODDABLE)/modules/files/file/manifest.json"
+	],
+	"platforms": {
+		"esp32": {
+			"modules": {
+				"*": [
+					"$(MODULES)/files/flash/*",
+					"$(MODULES)/files/flash/esp32/*"
+				]
+			}
+		}
+	}
+}

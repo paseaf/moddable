@@ -2300,8 +2300,9 @@ void fxSampleInstrumentation(txMachine* the, txInteger count, txInteger* values)
 		c_printf("%d", xsInstrumentValues[i]);
 	}
 	c_printf("\n");
-	c_printf("uxTaskGetStackHighWaterMark: %d\n", uxTaskGetStackHighWaterMark(NULL));
-    c_printf("heap_caps_get_minimum_free_size: %d\n", xPortGetMinimumEverFreeHeapSize());
+	c_printf("stackHWM: %d\n", uxTaskGetStackHighWaterMark(NULL));
+    c_printf("min_free_DRAM_heap: %d\n", heap_caps_get_minimum_free_size(MALLOC_CAP_8BIT));
+    c_printf("min_free_D_IRAM_heap: %d\n", heap_caps_get_minimum_free_size(MALLOC_CAP_32BIT));
 #endif
 }
 #endif
